@@ -11,6 +11,7 @@ class Question(models.Model):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
     was_published_recently.short_description = 'Published recently?'
+    was_published_recently.boolean = True
 
     def __str__(self):
         return self.question_text
